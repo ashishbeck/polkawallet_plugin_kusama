@@ -86,7 +86,7 @@ class PluginKusama extends PolkawalletPlugin {
   final bool recoveryEnabled;
 
   @override
-  List<NetworkParams> get nodeList {
+  Future<List<NetworkParams>> get nodeList async {
     if (basic.name == network_name_polkadot) {
       return _randomList(node_list_polkadot)
           .map((e) => NetworkParams.fromJson(e))
